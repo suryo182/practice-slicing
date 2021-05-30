@@ -7,7 +7,9 @@
   --dark-gray: #6b6a6a;
   --light-gray: #fafafb;
   --orange: #ff9050;
+  --double-quote: ##efedf3;
   --dark-green: #2b312e;
+  --footer-color: #192e46;
   --primary-font: Lato, sans-serif;
   --secondary-font: Lora, sans-serif;
 }
@@ -43,6 +45,15 @@ body {
 
   &--primary {
     background-color: var(--primary);
+  }
+
+  &--subscribe {
+    width: 16rem;
+    height: 5rem;
+    position: absolute;
+    right: 3.5rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
   }
 }
 
@@ -101,7 +112,7 @@ body {
 
   &__hero {
     display: grid;
-    column-gap: 36rem;
+    column-gap: 30rem;
     margin-top: 8.9rem;
     grid-template-columns: repeat(2, 1fr);
 
@@ -115,7 +126,20 @@ body {
       height: 63rem;
       background-image: url('../images/hero-img-1.png');
       background-repeat: no-repeat;
+      background-position: center;
       background-size: cover;
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 63rem;
+      background-color: var(--dark-green);
+      opacity: 0.4;
       z-index: -1;
     }
   }
@@ -173,7 +197,7 @@ body {
 }
 
 .section {
-  margin: 15rem 0;
+  margin: 10rem 0;
 }
 
 .section-package {
@@ -242,13 +266,18 @@ body {
 }
 
 .section-feature {
-  display: grid;
-  column-gap: 9rem;
   margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  height: 133rem;
+  height: 100rem;
   padding: 16rem 15.5rem;
   background-color: var(--secondary);
+
+  &__wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+    display: grid;
+    column-gap: 9rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   &__img {
     width: 46.4rem;
@@ -283,10 +312,26 @@ body {
   }
 
   &__testimonial {
+    position: relative;
     color: var(--dark-gray);
+    margin-left: 6.3rem;
     font-size: 2.2rem;
     line-height: 4.2rem;
     margin-bottom: 10rem;
+    z-index: 10;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -5rem;
+      top: -3rem;
+      background-color: var(--double-quote);
+      background-image: url('../images/doublequote.svg');
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
   }
 
   &__people {
@@ -325,5 +370,101 @@ body {
   &__logo {
     height: 4rem;
     margin-right: 4rem;
+  }
+}
+
+.footer {
+  background-color: var(--footer-color);
+  height: 42rem;
+  position: relative;
+  padding: 8rem 0;
+
+  &__subscribe {
+    display: flex;
+    position: absolute;
+    width: 83rem;
+    height: 12rem;
+    top: 0;
+    right: 14rem;
+    padding: 3.1rem 3.5rem;
+    border-radius: 0.5rem;
+    transform: translateY(-50%);
+    background-color: var(--white);
+
+    --frdy-shadow: 0px 20px 80px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--frdy-ring-offset-shadow, 0 0 #0000),
+      var(--frdy-ring-shadow, 0 0 #0000), var(--frdy-shadow) !important;
+  }
+
+  &__discount {
+    width: 40%;
+    h3 {
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      font-family: var(--secondary-font);
+    }
+
+    span {
+      font-size: 1.6rem;
+      color: var(--gray);
+    }
+  }
+
+  &__button {
+    width: 60%;
+    display: flex;
+
+    input {
+      width: 100%;
+      height: 5rem;
+      padding: 1.4rem;
+      font-size: 1.8rem;
+      border: 1px solid var(--medium-gray);
+      background-color: var(--light-gray);
+      border-radius: 0.5rem;
+      outline-color: var(--primary);
+      position: relative;
+    }
+  }
+
+  &__content {
+    display: grid;
+    column-gap: 10rem;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+
+  &__item {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+
+    img {
+      margin-bottom: 2.7rem;
+      height: 5rem;
+      width: 5rem;
+    }
+
+    span {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        font-size: 1.8rem;
+        font-weight: 300;
+
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
   }
 }
