@@ -2,23 +2,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 /*========== CSS VARIABLES ==========*/
 :root {
-  --header-height: 3rem;
+  --header-height: 4rem;
   /*========== Colors ==========*/
   /*========== HSL color mode ==========*/
-  --body-color: #f3f5fc;
-  --white-color: #ffffff;
-  --text-color: hsl(223, 61, 10, 55%)
-  --title-color: #0A1329;
+  --first-color: hsl(223, 61%, 10%, 100%);
+  --first-color-second: hsl(223, 60%, 49%, 100%);
+  --first-color-alt: hsl(var(--hue-color), 64%, 15%);
+  --title-color: hsl(223, 61, 10, 100%);
+  --text-color: hsl(var(--hue-color), 24%, 35%);
+  --text-color-dark: hsl(223, 61, 10, 100%);
+  --text-color-light: hsl(var(--hue-color), 8%, 60%);
+  --input-color: hsl(var(--hue-color), 24%, 97%);
+  --body-color: hsl(223, 61, 97, 100%);
+  --white-color: #fff;
   /*========== Font and typography ==========*/
   --body-font: "Rubik", sans-serif;
   --title-font: "Rubik", sans-serif;
-  --h1-font-size: 2.5rem;
-  --h2-font-size: 1.5rem;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --bigger-font-size: 1.75rem;
-  --big-font-size: 1.5rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
   /*========== Font weight ==========*/
   --font-regular: 400;
   --font-medium: 500;
@@ -39,13 +45,13 @@
 }
 @media screen and (min-width: 968px) {
   :root {
-    --h1-font-size: 6.125rem;
-    --h2-font-size: 3rem;
-    --h3-font-size: 1.875rem;
-    --bigger-font-size: 2.25rem;
-    --big-font-size: 1.75rem;
-    --normal-font-size: 1.5rem;
-    --small-font-size: 1.125rem;
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -91,7 +97,8 @@ a {
   text-decoration: none;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -131,15 +138,65 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+.nav__menu {
+  display: flex;
+  column-gap: 4rem;
+}
 .nav__logo {
+  display: flex;
   color: var(--title-font);
   font-weight: var(--font-regular);
-  display: flex;
   column-gap: var(--small-font-size);
+  align-items: center;
   cursor: pointer;
 }
 .nav__list {
   display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+.nav__link {
+  color: var(--text-color-dark);
+  font-weight: var(--font-regular);
+}
+.nav__action .button {
+  padding: 0.8rem 2rem;
+  border-radius: 2.4375rem;
+  font-weight: var(--font-medium);
+  font-size: var(--normal-font-size);
+}
+.nav__action .button--sign-in {
+  background-color: var(--body-color);
+  color: var(--first-color-second);
+}
+.nav__action .button--register {
+  background-color: var(--first-color-second);
+  color: var(--white-color);
+}
+
+/*========== MEDIA QUERIES ==========*/
+/* For small devices */
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2rem;
+    align-items: center;
+  }
+}
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
