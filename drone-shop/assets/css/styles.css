@@ -16,7 +16,7 @@
   --body-color-light-red: hsla(351, 100%, 96%, 1);
   --input-color: hsl(var(--hue-color), 24%, 97%);
   --body-color: hsla(223, 61%, 97%, 1);
-  --body-color: #fff;
+  --body-color-white: #fff;
   --white-color: #fff;
   /*========== Font and typography ==========*/
   --body-font: "Rubik", sans-serif;
@@ -75,7 +75,7 @@ body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background-color: var(--body-color-white);
   color: var(--text-color);
 }
 
@@ -191,6 +191,9 @@ button {
 }
 
 /* ========== HOME ========== */
+.home {
+  background-color: var(--body-color);
+}
 .home__container {
   position: relative;
   height: calc(100vh - var(--header-height));
@@ -234,6 +237,9 @@ button {
 }
 
 /* ========== FEATURE ========== */
+.feature {
+  background-color: var(--body-color);
+}
 .feature__card {
   position: relative;
   height: 30rem;
@@ -266,13 +272,16 @@ button {
 }
 
 /* ========== ABOUT ========== */
+.about {
+  background-color: var(--body-color);
+}
 .about__container {
   position: relative;
 }
 .about__container::after {
   position: absolute;
   content: "";
-  bottom: -400px;
+  bottom: -375px;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -312,6 +321,32 @@ button {
   color: var(--text-color-light);
 }
 
+/* ========== VIDEO ========== */
+#video-file {
+  border-radius: 1.25rem;
+}
+
+.video__container {
+  margin-top: 10rem;
+}
+.video__content {
+  position: relative;
+}
+.video__button {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50% !important;
+}
+.video__button-icon {
+  font-size: 2.2rem;
+  color: var(--first-color-second);
+}
+
 /* ========== BUTTONS ========== */
 .button {
   display: inline-block;
@@ -321,6 +356,11 @@ button {
   font-weight: var(--font-medium);
   transition: 0.3s;
   border-radius: 2.1875rem;
+}
+.button--flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*========== MEDIA QUERIES ==========*/
@@ -381,7 +421,7 @@ button {
   }
 
   .about__container {
-    height: 640px;
+    height: 540px;
   }
 }
 

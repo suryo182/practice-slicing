@@ -19,7 +19,7 @@
   --body-color-light-red: hsla(351, 100%, 96%, 1);
   --input-color: hsl(var(--hue-color), 24%, 97%);
   --body-color: hsla(223, 61%, 97%, 1);
-  --body-color: #fff;
+  --body-color-white: #fff;
   --white-color: #fff;
 
   /*========== Font and typography ==========*/
@@ -83,7 +83,7 @@ body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background-color: var(--body-color-white);
   color: var(--text-color);
 }
 
@@ -209,6 +209,8 @@ button {
 
 /* ========== HOME ========== */
 .home {
+  background-color: var(--body-color);
+
   &__container {
     position: relative;
     height: calc(100vh - var(--header-height));
@@ -261,6 +263,8 @@ button {
 
 /* ========== FEATURE ========== */
 .feature {
+  background-color: var(--body-color);
+
   &__card {
     position: relative;
     height: 30rem;
@@ -299,12 +303,14 @@ button {
 
 /* ========== ABOUT ========== */
 .about {
+  background-color: var(--body-color);
+
   &__container {
     position: relative;
     &::after {
       position: absolute;
       content: '';
-      bottom: -400px;
+      bottom: -375px;
       margin-left: auto;
       margin-right: auto;
       left: 0;
@@ -350,15 +356,52 @@ button {
   }
 }
 
+/* ========== VIDEO ========== */
+#video-file {
+  border-radius: 1.25rem;
+}
+
+.video {
+  &__container {
+    margin-top: 10rem;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__button {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50% !important;
+
+    &-icon {
+      font-size: 2.2rem;
+      color: var(--first-color-second);
+    }
+  }
+}
+
 /* ========== BUTTONS ========== */
 .button {
   display: inline-block;
   background-color: var(--first-color-second);
   color: var(--white-color);
   padding: 1.125rem 2.8rem;
-  font-weight: (var(--font-medium));
+  font-weight: var(--font-medium);
   transition: 0.3s;
   border-radius: 2.1875rem;
+
+  &--flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /*========== MEDIA QUERIES ==========*/
@@ -441,7 +484,7 @@ button {
 
   .about {
     &__container {
-      height: 640px;
+      height: 540px;
     }
   }
 }
