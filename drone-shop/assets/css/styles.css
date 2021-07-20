@@ -12,11 +12,14 @@
   --text-color: hsl(var(--hue-color), 24%, 35%);
   --text-color-dark: hsl(223, 61, 10, 100%);
   --text-color-light: hsla(223, 61%, 10%, 0.55);
+  --text-color-light-dark: hsla(223, 61%, 10%, 1);
   --text-color-red: hsla(4, 90%, 58%, 0.55);
   --body-color-light-red: hsla(351, 100%, 96%, 1);
   --input-color: hsl(var(--hue-color), 24%, 97%);
   --body-color: hsla(223, 61%, 97%, 1);
   --body-color-white: #fff;
+  --border-color: #e5e5e5;
+  --border-color-2: #f0f0f0;
   --white-color: #fff;
   /*========== Font and typography ==========*/
   --body-font: "Rubik", sans-serif;
@@ -47,6 +50,8 @@
   --z-tooltip: 10;
   --z-fixed: 100;
   /*========== Hover Overlay ==========*/
+  --img-transition: 0.3s;
+  --img-scale: scale(1.1);
 }
 @media screen and (min-width: 968px) {
   :root {
@@ -124,6 +129,13 @@ button {
   color: var(--title-color);
   text-align: center;
   margin-bottom: var(--mb-2);
+}
+.section__description {
+  font-size: var(--h3-font-size);
+  color: var(--text-color-light);
+  line-height: 2rem;
+  text-align: center;
+  margin-bottom: var(--mb-3-25);
 }
 
 .container {
@@ -292,12 +304,6 @@ button {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.about__title {
-  font-weight: 700;
-  font-size: var(--h1-font-size);
-  text-align: center;
-  margin-bottom: var(--mb-2);
-}
 .about__description {
   font-size: var(--h3-font-size);
   color: var(--text-color-light);
@@ -345,6 +351,131 @@ button {
 .video__button-icon {
   font-size: 2.2rem;
   color: var(--first-color-second);
+}
+
+/* ========== PRODUCT ========== */
+.product__content {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+}
+.product__data {
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 1.875rem;
+  text-align: center;
+}
+.product__img {
+  border-radius: 1.25rem;
+}
+.product__title {
+  margin-top: 1.875rem;
+  margin-bottom: 1rem;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-regular);
+}
+.product__price {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+}
+.product__description {
+  margin-bottom: 1.875rem;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-light);
+  color: var(--text-color-light-dark);
+}
+
+/* ========== TESTIMONIAL ========== */
+.testimonial__content {
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+}
+.testimonial__data {
+  margin-top: 4.375rem;
+  margin-bottom: var(--mb-3-25);
+  padding: 1.875rem;
+  border-radius: 0.626rem;
+  height: 15rem;
+  border: 2px solid var(--border-color-2);
+}
+.testimonial__description {
+  display: block;
+  margin-bottom: 1.875rem;
+  font-weight: var(--font-light);
+  font-size: var(--normal-font-size);
+  color: var(--text-color-dark);
+}
+.testimonial__profile {
+  display: flex;
+}
+.testimonial__img {
+  margin-right: 1.875rem;
+  width: 4.3rem;
+  height: 4.3rem;
+}
+.testimonial__details {
+  align-self: center;
+}
+.testimonial__name {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--mb-0-25);
+}
+.testimonial__job {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-regular);
+  color: var(--text-color-light);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background-color: var(--text-color-light-dark);
+  color: var(--white-color);
+}
+.footer__content {
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-2);
+}
+.footer__logo:hover {
+  cursor: pointer;
+}
+.footer__logo-img {
+  margin-right: 1rem;
+  color: var(--white-color);
+  border-radius: 100%;
+}
+.footer__logo-title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  color: var(--text-color-dark);
+}
+.footer__description {
+  margin-bottom: var(--mb-2);
+}
+.footer__social {
+  margin-right: 0.5rem;
+  height: 2.75rem;
+  width: 2.75rem;
+}
+.footer__social:hover {
+  cursor: pointer;
+}
+.footer__subtitle {
+  margin-bottom: var(--mb-1-5);
+  font-weight: var(--font-bold);
+  font-size: var(--normal-font-size);
+}
+.footer__item {
+  margin-bottom: var(--mb-0-5);
+}
+.footer__link {
+  color: var(--text-color);
+  font-weight: var(--font-light);
 }
 
 /* ========== BUTTONS ========== */
